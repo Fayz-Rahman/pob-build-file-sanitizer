@@ -1,13 +1,18 @@
 """
-project wide constants
+Project wide constants.
 """
 
 OUTPUT_SUFFIX = ".ai.xml"
 
-# xml tags that only exist to preserve pob editor/ui state
+# whole XML elements to remove.
 REMOVE_TAGS = {
     "TreeView",
-    "UndoRedo",
+    "Party",
+    "Calcs"
+}
+
+REMOVE_EMPTY_TAGS = {
+    "Notes",
 }
 
 # attributes related to pob editor/ui.
