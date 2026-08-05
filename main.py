@@ -4,7 +4,7 @@ from pathlib import Path
 from reader import BuildReader
 from cleaner import Cleaner
 from writer import Writer
-
+from tree_database import TreeDatabase
 
 def main() -> None:
 
@@ -45,6 +45,31 @@ def main() -> None:
     print("Output written to cleaned.xml")
 
     print()    
+
+    tree_db = TreeDatabase("TreeData.lua")
+
+    print()
+    print("=" * 50)
+    print("Tree Database")
+    print("=" * 50)
+
+    print("Classes:", len(tree_db.classes))
+    print("Nodes  :", tree_db.node_count())
+
+    sample = tree_db.get_node(28609)
+
+    print()
+
+    sample = tree_db.get_node(28609)
+
+    print()
+
+    print("Sample Node")
+    print("-----------")
+
+    for key, value in sample.items():
+
+        print(f"{key}: {value}")
 
     # root = tree.getroot()
 
